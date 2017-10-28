@@ -1,0 +1,67 @@
+<div ng-controller="uploadController"
+	class="container theme-showcase jumbotron panel panel-primary"
+	style="background-color: white;">
+	<div>
+		<div class="panel-heading">
+			<h3 class="panel-title">{{title}}</h3>
+		</div>
+		<form class="form-horizontal" role="form" name="uploadForm">
+			<div class="row">
+				<div class="col-md-12">
+
+					<div class="form-group">
+						<label for="firstName" class="col-sm-3 control-label">First
+							name</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="firstName"
+								placeholder="First name..." ng-model="firstName" required>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="lastName" class="col-sm-3 control-label">Last
+							name</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="lastName"
+								placeholder="Last name..." ng-model="lastName" required>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12" ng-show="title=='Upload File'">
+					<div class="form-group">
+						<label for="image" class="col-sm-3 control-label">File</label>
+						<div class="col-sm-9">
+							<input type="file" class="form-control" id="file"
+								placeholder="File..."
+								file-model="myFile" required>
+						</div>
+					</div>
+				</div>
+					<div class="form-group">
+						<label for="firstName" class="col-sm-3 control-label">File Description</label>
+						<div class="col-sm-9" style="padding-left: 23px;">
+							<input type="text" class="form-control" id="fileDesc"
+								placeholder="First name..." ng-model="fileDesc" required>
+						</div>
+					</div>				
+				<div class="col-md-12">
+					<div class="form-group">
+						<label for="upload" class="col-sm-3 control-label"></label>
+						<div class="col-sm-9">
+							<button id="upload" ng-click="uploadFile()" class="btn btn-primary"
+								ng-disabled="uploading">
+								<i ng-show="uploading" class="fa fa-refresh fa-spin fa-1x"></i>
+								{{action}}
+							</button>
+						</div>
+					</div>
+				</div>
+		</form>
+<!-- 		<input type="file" file-model="myFile" />
+		<button ng-click="uploadFile()">upload me</button> -->
+	</div>
+	<div class="alert alert-success" ng-show="fileUploaded">
+		<strong>Success!</strong> Indicates a successful or positive action.
+	</div>
+
+</div>

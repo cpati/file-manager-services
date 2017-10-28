@@ -1,0 +1,23 @@
+<html>
+<body>
+<form method="POST" enctype="multipart/form-data"
+      action="/upload">
+   File to upload: <input type="file" name="uploadedFile"><br />
+   <input type="submit" value="Upload">
+</form>
+
+<form method="GET" action="/delete">
+   File to delete: <input type="text" name="fileName"><br />
+   <input type="submit" value="Delete">
+</form>
+
+<form method="GET" action="/download">
+   File to download: <input type="text" name="fileName"><br />
+   <input type="submit" value="Download">
+</form>
+
+<form method="GET" action="/getfiles">
+   <input type="submit" value="Get Files">
+</form>
+</body>
+</html>
